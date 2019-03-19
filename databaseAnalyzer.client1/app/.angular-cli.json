@@ -1,0 +1,7 @@
+{
+  "apps": [{
+    "appRoot": ".",
+    "root": "lib",
+    "prefix": "your-prefix"
+  }]
+}
