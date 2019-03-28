@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Database Analyzer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+        <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+        <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <div ng-view></div>
+
+        <div class="__main">
+            <div class = "main">
+                <div class="__header">
+                    <div class="header-wrapper"></div>
+                </div>
+                <div class="__sidebar">
+                    <div class="sidebar">
+                        <div class="__menu"></div>
+                    </div>
+                </div>
+                <div class="__content">
+                    <div class="card">
+                        <div class="__card-content" ng-app="databaseAnalyzer">
+                            <div ng-controller="databaseDetails">
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="select">
+                                            <select ng-model="dbProvider">
+                                                <option selected value>Select database provider</option>
+                                                <option value="Oracle">Oracle</option>
+                                                <option value="MySQL">MySQL</option>
+                                                <option value="Postgres">Postgres</option>
+                                                <option value="Mongo">Mongo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input" type="url" id="urlField" placeholder="Please enter host url:port" ng-model="connectionLink" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input" type="text" id="username" placeholder="Please enter username" ng-model="username" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input" type="password" id="password" placeholder="Please enter password" ng-model="password" requried ng-blur="enableConnect()" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input" type="submit" value="Connect" ng-show="validValues" ng-click="connect()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <select ng-show="connectionSuccessful" ng-model="selectedDatabase">
+                                        <option selected>Select database</option>
+                                      <!--set database names after connection using ng-options-->
+                                    </select>
+                                    <select ng-show="databaseFound">
+                                        <option selected>Select table</option>
+                                      <!--set table options from database using ng-options-->
+                                    </select>
+                                    <!--<input type="text" placeholder="Please enter value to be searched" ng-model="value">-->
+                                    <input type="submit" value="Search" ng-show="false">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      </div>
+    </div>
+
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-resource.js"></script>
+    <!--<script src="lib/angular/angular.js"></script>-->
+    <!--<script src="lib/angular-route/angular-route.js"></script>-->
+    <script src="app.js"></script>
+    <script src="view1/view1.js"></script>
+    <script src="core/version/version.js"></script>
+    <script src="core/version/version-directive.js"></script>
+    <script src="core/version/interpolate-filter.js"></script>
+    </body>
+</html>
