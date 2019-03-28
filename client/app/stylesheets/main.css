@@ -137,6 +137,7 @@ Content
   justify-content: flex-start;
 }
 
+
 .box {
   background: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
@@ -154,10 +155,10 @@ Content
   font-weight: normal;
 }
 
-.select {
+.columns {
   margin-top: 1rem;
 }
 
-.columns {
-  margin-top: -4rem;
+.input {
+    width: auto;
 }
