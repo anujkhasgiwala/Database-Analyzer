@@ -1,6 +1,0 @@
-main\java\com\connection\MongoConnection.class
-main\java\com\connection\AbstractDBConnection.class
-main\java\com\controllers\DatabaseConnectionController.class
-main\java\com\service\DatabaseConnectionService.class
-main\java\com\connection\MySQLConnection.class
-main\java\com\connection\PostgresConnection.class

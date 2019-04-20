@@ -1,0 +1,6 @@
+D:\Practice\Database-Analyzer\server\src\main\java\com\connection\AbstractDBConnection.java
+D:\Practice\Database-Analyzer\server\src\main\java\com\connection\MongoConnection.java
+D:\Practice\Database-Analyzer\server\src\main\java\com\connection\PostgresConnection.java
+D:\Practice\Database-Analyzer\server\src\main\java\com\service\DatabaseConnectionService.java
+D:\Practice\Database-Analyzer\server\src\main\java\com\controllers\DatabaseConnectionController.java
+D:\Practice\Database-Analyzer\server\src\main\java\com\connection\MySQLConnection.java
