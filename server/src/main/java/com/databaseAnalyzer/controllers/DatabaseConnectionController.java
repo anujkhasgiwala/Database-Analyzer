@@ -1,9 +1,9 @@
 package com.databaseAnalyzer.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +20,7 @@ public class DatabaseConnectionController {
     DatabaseConnectionService service;
     
 	@RequestMapping(value = "/getDatabases", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
-    public Response getDatabaseList(/*
+    public List getDatabaseList(/* @RequestBody
 									 * @QueryParam("provider") String provider, @QueryParam("hostUrl") String
 									 * hostUrl,
 									 * 
@@ -28,11 +28,11 @@ public class DatabaseConnectionController {
 									 * password
 									 */) {
             //List<String> databaseList = service.getDatabaseList(provider, hostUrl, username, password);
-        return Response.ok(new ArrayList()).build();
+        return new ArrayList();
     }
 
-	@RequestMapping(value = "/getDatabases/{provider}/getTables", method = RequestMethod.GET)
-    public Response getTableList(@PathVariable("provider") String provider) {
+	@RequestMapping(value = "/getDatabases/{provider}/getTables", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+    public List getTableList(@PathVariable("provider") String provider) {
         return null;
     }
 }
