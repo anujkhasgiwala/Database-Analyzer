@@ -8,7 +8,7 @@ public class PostgresConnection extends AbstractDBConnection {
         try {
             /*Properties properties = new Properties();
             properties.setProperty("ssl", "true");*/
-
+        	Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(hostUrl, username, password);
         } catch (Exception e) {
             e.printStackTrace();

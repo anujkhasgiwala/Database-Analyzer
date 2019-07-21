@@ -1,35 +1,27 @@
 package com.databaseAnalyzer.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.databaseAnalyzer.connection.AbstractDBConnection;
-import com.databaseAnalyzer.connection.MongoConnection;
-import com.databaseAnalyzer.connection.MySQLConnection;
-import com.databaseAnalyzer.connection.PostgresConnection;
+import com.databaseAnalyzer.connection.DBConnectionSingletonFactory;
 
+@Service
 public class DatabaseConnectionService {
-    AbstractDBConnection dbConnection;
+	private AbstractDBConnection dbConnection;
 
-    public List<String> getDatabaseList(String provider, String hostUrl, String username, String password) {
-        switch (provider) {
-            case "Postgres":
-                dbConnection = new PostgresConnection();
-                break;
-            case "MySQL":
-                dbConnection = new MySQLConnection();
-                break;
-            case "Mongo":
-                dbConnection = new MongoConnection();
-                break;
-        }
-
-        try {
-            dbConnection.connectDB(hostUrl, username, password);
-            return dbConnection.getDatabaseList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new ArrayList<String>();
-    }
+	public List<String> getDatabaseList(String provider, String hostUrl, String username, String password) {
+		dbConnection = DBConnectionSingletonFactory.getInstance(provider);
+		
+		try {
+			dbConnection.connectDB(hostUrl, username, password);
+			return dbConnection.getDatabaseList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ArrayList<String>();
+	}
 }
