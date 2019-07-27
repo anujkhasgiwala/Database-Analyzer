@@ -22,4 +22,10 @@ public class MongoConnection extends AbstractDBConnection {
     public List<String> getDatabaseList() throws SQLException {
         return null;
     }
+
+	@Override
+	public List<String> getTableList(String schemaName) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
