@@ -5,7 +5,7 @@
   "description": "Project to analyze your database and make useful business decisions",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.7.7",
+    "angular": "^1.8.3",
     "angular-loader": "^1.7.7",
     "angular-route": "^1.7.7",
     "html5-boilerplate": "0.0.1"
